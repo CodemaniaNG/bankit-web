@@ -1,10 +1,11 @@
 import React from "react";
 import "./landing.css";
+import Welcome from "../../components/welcome/welcome";
 
 const Landing = () => {
   return (
     <>
-      <h2>Hello World</h2>
+      <Welcome />
     </>
   );
 };

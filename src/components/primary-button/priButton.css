@@ -1,0 +1,22 @@
+.pri-button {
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  font-size: 1.1rem;
+  width: 100%;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 162%;
+  cursor: pointer;
+  transition: is all ease;
+  background: #245ef5;
+  border: none;
+  color: white;
+}
+
+.pri-button:hover {
+  border: 1px solid #245ef5;
+  background: #fff;
+  color: #245ef5;
+  transition: 1s all ease;
+}

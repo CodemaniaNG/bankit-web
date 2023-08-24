@@ -1,0 +1,6 @@
+.welcome-container {
+  background-image: url("../../assets/doodle.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 24px 0px 0px;
+}
