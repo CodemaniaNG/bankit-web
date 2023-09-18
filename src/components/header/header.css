@@ -55,13 +55,13 @@
 }
 
 .header-action .header-login {
-  border: 1px solid #245ef5;
+  border: 1px solid #062983;
   background: #fff;
-  color: #245ef5;
+  color: #062983;
 }
 
 .header-login:hover {
-  background: #245ef5;
+  background: #062983;
   border: none;
   color: white;
   transition: 1s all ease;
@@ -69,14 +69,14 @@
 
 .header-action .header-signup {
   border-radius: 24px;
-  background: #245ef5;
+  background: #062983;
   border: none;
   color: white;
 }
 
 .header-signup:hover {
-  border: 1px solid #245ef5;
+  border: 1px solid #062983;
   background: #fff;
-  color: #245ef5;
+  color: #062983;
   transition: 1s all ease;
 }

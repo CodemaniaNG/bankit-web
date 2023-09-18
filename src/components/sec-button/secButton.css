@@ -1,4 +1,4 @@
-.pri-button {
+.sec-button {
   padding: 24px;
   box-sizing: border-box;
   border-radius: 24px;
@@ -9,14 +9,14 @@
   line-height: 162%;
   cursor: pointer;
   transition: is all ease;
-  background: #062983;
-  border: none;
-  color: white;
-}
-
-.pri-button:hover {
   border: 1px solid #062983;
   background: #fff;
   color: #062983;
+}
+
+.sec-button:hover {
+  background: #062983;
+  border: none;
+  color: white;
   transition: 1s all ease;
 }
