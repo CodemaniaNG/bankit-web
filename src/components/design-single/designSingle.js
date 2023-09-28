@@ -3,7 +3,7 @@ import "./designSingle.css";
 import DesignLayout from "../../styles/design-style/designLayout";
 import DoubleArrow from "../../svg-component/double-arrow/doubleArrow";
 
-const DesignSingle = ({ bgColor, title, text, type, img }) => {
+const DesignSingle = ({ bgColor, title, text, type, img, color }) => {
   return (
     <DesignLayout bgColor={bgColor} type={type}>
       <img src={img} alt="arrow" />
@@ -12,7 +12,7 @@ const DesignSingle = ({ bgColor, title, text, type, img }) => {
         <p>{text}</p>
         <div>
           <h3>Learn more</h3>
-          <DoubleArrow />
+          <DoubleArrow color={color} />
         </div>
       </div>
     </DesignLayout>

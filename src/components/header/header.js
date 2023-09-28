@@ -1,9 +1,10 @@
 import React from "react";
 import "./header.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Layout from "../../utils/layout/layout";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <Layout>
       <div className="header-container">
@@ -20,8 +21,20 @@ const Header = () => {
         </div>
         <div className="header-action">
           <NavLink>Contact Us</NavLink>
-          <button className="header-login">Login</button>
-          <button className="header-signup">Sign up</button>
+          <button
+            className="header-login"
+            onClick={() => {
+              navigate("/auth/login");
+            }}>
+            Login
+          </button>
+          <button
+            className="header-signup"
+            onClick={() => {
+              navigate("/auth/signup");
+            }}>
+            Sign up
+          </button>
         </div>
       </div>
     </Layout>

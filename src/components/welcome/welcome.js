@@ -23,7 +23,7 @@ const Welcome = () => {
               </div>
               <div className="welcome-action">
                 <div>
-                  <PriButton text="Get started" />
+                  <PriButton text="Get started" active={true} />
                 </div>
                 <div>
                   <SecButton text="Download App" />

@@ -16,7 +16,7 @@ const Card = () => {
             </p>
           </div>
           <div className="card-text2">
-            <PriButton text="Get started" />
+            <PriButton text="Get started" active={true} />
           </div>
         </div>
         <div className="card-img">

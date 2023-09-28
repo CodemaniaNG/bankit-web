@@ -8,6 +8,7 @@ const DesignLayout = styled.div`
   flex-direction: ${({ type }) => (type === "long" ? "unset" : "column")};
   // justify-content: center;
   align-items: ${({ type }) => (type === "long" ? "center" : "flex-start")};
+  height: ${({ type }) => (type === "long" ? "unset" : "448px")};
   gap: 24px;
   display: flex;
   border-radius: 20px;
@@ -28,7 +29,7 @@ const DesignLayout = styled.div`
   }
 
   .design-single p {
-    color: ${({ type, bgColor }) => (bgColor === "#FFF1CC" ? "#262626" : type === "long" ? "white" : "#DBDBDB")};
+    color: ${({ type, bgColor }) => (bgColor === "#FFF1CC" ? "#262626" : bgColor === "#fff" ? "#666" : type === "long" ? "white" : "#DBDBDB")};
     font-size: 24px;
     font-style: normal;
     font-weight: 400;

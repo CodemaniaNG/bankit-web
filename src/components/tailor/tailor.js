@@ -20,18 +20,24 @@ const Tailor = () => {
           <div className="tailor-body">
             <div className="tailor-cont">
               <div>
-                <DesignSingle img={Financial} title="Financial Insights" text="Get personalized insights into your spending and make informed decisions." bgColor="#fff" />
+                <DesignSingle
+                  color="#062983"
+                  img={Financial}
+                  title="Financial Insights"
+                  text="Get personalized insights into your spending and make informed decisions."
+                  bgColor="#fff"
+                />
               </div>
               <div>
-                <DesignSingle img={Instant} title="Instant Transfers" text="Send money to friends and loved ones, and manage expenses instantly." bgColor="#fff" />
+                <DesignSingle color="#062983" img={Instant} title="Instant Transfers" text="Send money to friends and loved ones, and manage expenses instantly." bgColor="#fff" />
               </div>
             </div>
             <div className="tailor-cont">
               <div>
-                <DesignSingle img={Rewards} title="Rewards" text="Earn points to compete amongst your friends" bgColor="#fff" />
+                <DesignSingle color="#062983" img={Rewards} title="Rewards" text="Earn points to compete amongst your friends" bgColor="#fff" />
               </div>
               <div>
-                <DesignSingle img={Rewards} title="Security First" text="Security copy content needed here" bgColor="#fff" />
+                <DesignSingle color="#062983" img={Rewards} title="Security First" text="Security copy content needed here" bgColor="#fff" />
               </div>
             </div>
           </div>

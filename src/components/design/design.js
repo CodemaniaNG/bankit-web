@@ -18,13 +18,26 @@ const Design = () => {
           <div className="design-body">
             <div className="design-wrapper">
               <div>
-                <DesignSingle img={Arrow} bgColor="#021031" title="Digital at Heart" text="Embrace the digital age with an app that fits your tech-savvy lifestyle." />
+                <DesignSingle
+                  color="white"
+                  img={Arrow}
+                  bgColor="#021031"
+                  title="Digital at Heart"
+                  text="Embrace the digital age with an app that fits your tech-savvy lifestyle."
+                />
               </div>
               <div>
-                <DesignSingle img={Arrow} bgColor="#6083DD" title="Digital at Heart" text="Embrace the digital age with an app that fits your tech-savvy lifestyle." />
+                <DesignSingle
+                  color="white"
+                  img={Arrow}
+                  bgColor="#6083DD"
+                  title="Digital at Heart"
+                  text="Embrace the digital age with an app that fits your tech-savvy lifestyle."
+                />
               </div>
             </div>
             <DesignSingle
+              color="white"
               img={Arrow}
               bgColor="#E46C0B"
               title="Your Voice Matters"

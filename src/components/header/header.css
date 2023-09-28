@@ -35,6 +35,11 @@
   text-decoration: none;
 }
 
+.header-nav a:hover,
+.header-action a:hover {
+  color: #062983;
+}
+
 .header-action {
   display: flex;
   gap: 32px;

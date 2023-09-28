@@ -1,0 +1,37 @@
+.success-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.first-ellipse {
+  width: 362px;
+  height: 362px;
+  border-radius: 50%;
+  background: var(--surface-success-default, #f3fcf2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.second-ellipse {
+  width: 287px;
+  height: 287px;
+  border-radius: 50%;
+  background: var(--surface-success-default, #f3fcf2);
+  mix-blend-mode: multiply;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.third-ellipse {
+  width: 234px;
+  height: 234px;
+  border-radius: 50%;
+  background: var(--surface-success-default, #f3fcf2);
+  mix-blend-mode: multiply;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
