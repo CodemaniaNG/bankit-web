@@ -1,7 +1,7 @@
 .header-container {
   width: 100%;
   display: flex;
-  gap: 110px;
+  /* gap: 110px; */
   justify-content: space-between;
   align-items: center;
 }
