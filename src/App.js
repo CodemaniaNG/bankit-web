@@ -7,6 +7,7 @@ import SignUp from "./pages/signup/signup";
 import Login from "./pages/login/login";
 import ForgotPassword from "./pages/forgot-password/forgotPassword";
 import Dashboard from "./pages/dashboard/dashboard";
+import Transactions from "./pages/transactions/transactions";
 
 function App() {
   const variants = {
@@ -31,6 +32,7 @@ function App() {
             <Route path="/auth/login" element={<Login />} />
             <Route path="/auth/forgot-password" element={<ForgotPassword />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/transactions" element={<Transactions />} />
           </Routes>
         </div>
       </motion.div>

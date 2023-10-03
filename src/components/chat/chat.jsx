@@ -9,7 +9,7 @@ const Chat = ({ right, closeAction }) => {
       <div className="chat-container">
         <div className="chat-header">
           <div className="chat-close">
-            <Close action={closeAction} />
+            <Close action={closeAction} color="#F2F2F2" />
           </div>
           <div className="chat-text">
             <h2>Your problem is our priority</h2>

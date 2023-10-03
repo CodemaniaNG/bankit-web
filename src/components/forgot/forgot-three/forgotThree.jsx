@@ -35,7 +35,7 @@ const ForgotThree = ({ forward, back }) => {
               />
               <span>Password</span>
             </div>
-            {state ? <OpenEye action={action} /> : <ClosedEye action={action} />}
+            {state ? <OpenEye action={action} color="#474747" /> : <ClosedEye color="#474747" action={action} />}
           </div>
         </div>
         <PriButton text="Next" active={active} action={forward} />

@@ -25,7 +25,7 @@ const ForgotTwo = ({ back, forward }) => {
               <input type={state ? "number" : "password"} name="ssn-4" maxLength={1} onChange={handleChange} />
               <input type={state ? "number" : "password"} name="ssn-5" maxLength={1} onChange={handleChange} />
             </div>
-            {state ? <OpenEye action={action} /> : <ClosedEye action={action} />}
+            {state ? <OpenEye action={action} color="#474747" /> : <ClosedEye color="#474747" action={action} />}
           </div>
           <div className="otp-duration">
             <p>00:00</p>

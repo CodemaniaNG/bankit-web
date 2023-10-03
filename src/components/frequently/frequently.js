@@ -19,7 +19,7 @@ const Frequently = () => {
               return (
                 <div className="frequently-single" key={index}>
                   <h2>{item}</h2>
-                  <Plus />
+                  <Plus color="#666666" />
                 </div>
               );
             })}

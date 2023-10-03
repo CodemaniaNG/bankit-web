@@ -131,7 +131,7 @@ const StepOne = ({ submit }) => {
                   <input type={state ? "text" : "password"} required onInput={handlePwd} />
                   <span>Password</span>
                 </div>
-                {state ? <OpenEye action={action} /> : <ClosedEye action={action} />}
+                {state ? <OpenEye action={action} color="#474747" /> : <ClosedEye color="#474747" action={action} />}
               </div>
             </div>
             <div className="step-one-hint">

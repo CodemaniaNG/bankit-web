@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 const DesignLayout = styled.div`
   width: 100%;

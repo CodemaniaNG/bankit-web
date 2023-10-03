@@ -14,7 +14,7 @@ const Support = ({ right, closeAction, messageAction }) => {
     <SupportStyled right={right}>
       <div className="support-container">
         <div className="support-close">
-          <Close action={closeAction} />
+          <Close action={closeAction} color="#F2F2F2" />
         </div>
         <div className="support-header">
           <h3>
@@ -41,11 +41,11 @@ const Support = ({ right, closeAction, messageAction }) => {
               </div>
               <div className="support-search-single">
                 <h2>Account Verification</h2>
-                <Right />
+                <Right color="#474747" />
               </div>
               <div className="support-search-single">
                 <h2>Card Funding</h2>
-                <Right />
+                <Right color="#474747" />
               </div>
             </div>
             <div className="support-feedback">

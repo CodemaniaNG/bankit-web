@@ -7,7 +7,7 @@ const Input = ({ type, placeholder }) => {
   return (
     <div className="input-container">
       <input type={type} placeholder={placeholder} />
-      {type === "password" ? <ClosedEye /> : <Info />}
+      {type === "password" ? <ClosedEye color="#474747" /> : <Info />}
     </div>
   );
 };
