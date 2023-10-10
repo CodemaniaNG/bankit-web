@@ -1,16 +1,22 @@
 import React from "react";
 import "./sidebar.css";
 import Logo from "../../svg-component/logo";
-import { sidebarData } from "../../utils/data";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import SideBarData from "../../utils/sidebarData";
 
 const Sidebar = ({ action, action2 }) => {
+  const location = useLocation();
+  const color1 = location.pathname === "/dashboard" ? "#062983" : "#666666";
+  const color2 = location.pathname === "/transactions" ? "#062983" : "#666666";
+  const color3 = location.pathname === "/analytics" ? "#062983" : "#666666";
+  const color4 = location.pathname === "/cards" ? "#062983" : "#666666";
+  const color5 = location.pathname === "/settings" ? "#062983" : "#666666";
   return (
     <div className="sidebar-container">
       <div className="sidebar-cont">
         <Logo />
         <div className="sidebar-links">
-          {sidebarData?.links?.map((item, index) => {
+          {SideBarData(color1, color2, color3, color4, color5)?.links?.map((item, index) => {
             return (
               <NavLink to={item.link} key={index}>
                 <div className="sidebar-single">
@@ -23,7 +29,7 @@ const Sidebar = ({ action, action2 }) => {
         </div>
       </div>
       <div className="sidebar-wrapper">
-        {sidebarData?.subLinks?.map((item, index) => {
+        {SideBarData()?.subLinks?.map((item, index) => {
           return (
             <div className={item.text === "Logout" ? "sidebar-single logout" : "sidebar-single"} key={index} onClick={item.text === "Help Center" ? action : action2}>
               {item.img}

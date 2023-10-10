@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
 }
 
 .back-button svg {
@@ -12,14 +12,14 @@
 .step-one-body {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 32px;
   width: 100%;
 }
 
 .step-one-body form {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 40px;
 }
 
 .step-one-form {
