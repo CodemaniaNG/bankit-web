@@ -5,9 +5,13 @@ import ClosedEye from "../../svg-component/closedEye";
 // import { formatter } from "../../utils/formatter/formatter";
 import Copy from "../../svg-component/copy";
 import Plus from "../../svg-component/plus/plus";
+import FundWallet from "../fund-wallet/fundWallet";
+import FundSuccess from "../fund-success/fundSuccess";
 
-const AccountSummary = ({ fundAction }) => {
+const AccountSummary = () => {
   const [state, setState] = useState(false);
+  const [right2, setRight2] = useState("-700px");
+  const [right3, setRight3] = useState("-700px");
   const action = () => {
     setState(!state);
   };
@@ -31,8 +35,33 @@ const AccountSummary = ({ fundAction }) => {
         </div>
       </div>
       <div className="action-container">
-        <Plus color="#E6E6E6" /> <h2 onClick={fundAction}>Fund wallet</h2>
+        <Plus color="#E6E6E6" />
+        <h2
+          onClick={() => {
+            setRight2("0px");
+          }}>
+          Fund wallet
+        </h2>
       </div>
+      <FundWallet
+        right={right2}
+        closeAction={() => {
+          setRight2("-700px");
+        }}
+        fundAction={() => {
+          setRight3("0px");
+        }}
+      />
+      <FundSuccess
+        right={right3}
+        closeAction={() => {
+          setRight3("-700px");
+        }}
+        action={() => {
+          setRight3("-700px");
+          setRight2("-700px");
+        }}
+      />
     </div>
   );
 };

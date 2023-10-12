@@ -19,7 +19,7 @@ const Sidebar = ({ action, action2 }) => {
           {SideBarData(color1, color2, color3, color4, color5)?.links?.map((item, index) => {
             return (
               <NavLink to={item.link} key={index}>
-                <div className="sidebar-single">
+                <div className={item.link === location.pathname ? "sidebar-single active" : "sidebar-single"}>
                   {item.img}
                   <p>{item.text}</p>
                 </div>

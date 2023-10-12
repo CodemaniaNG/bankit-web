@@ -31,3 +31,40 @@ export const recentTransactions = [
     status: "Failed",
   },
 ];
+
+export const banks = ["Access bank", "AB Microfinance bank", "GTBank Plc", "Kuda Microfinance bank", "Moniepoint Microfinance bank", "PalmPay"];
+
+export const amount = [500, 1000, 3000, 5000, 10000, 50000];
+
+export const transactionHistories = [
+  {
+    name: "Yakub Oji",
+    time: "5:23 PM",
+    amount: "200,000",
+    status: "inflow",
+  },
+  {
+    name: "Yakub Oji",
+    time: "5:23 PM",
+    amount: "200,000",
+    status: "outflow",
+  },
+  {
+    name: "Yakub Oji",
+    time: "5:23 PM",
+    amount: "200,000",
+    status: "outflow",
+  },
+  {
+    name: "Yakub Oji",
+    time: "5:23 PM",
+    amount: "200,000",
+    status: "outflow",
+  },
+  {
+    name: "Yakub Oji",
+    time: "5:23 PM",
+    amount: "200,000",
+    status: "inflow",
+  },
+];

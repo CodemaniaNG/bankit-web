@@ -5,7 +5,7 @@ import Category from "../../svg-component/category";
 import Export from "../../svg-component/export";
 import { categories, recentTransactions, statuses } from "../../utils/data";
 import OutsideClick from "../outside-click/outsideClick";
-import ThreeDots from "../../svg-component/threeDot";
+import MoreAction from "../more-action/moreAction";
 
 const TransactionsTable = () => {
   const [status, setStatus] = useState(false);
@@ -112,7 +112,7 @@ const TransactionsTable = () => {
                 </span>
               </p>
               <div>
-                <ThreeDots />
+                <MoreAction />
               </div>
             </div>
           );

@@ -21,7 +21,8 @@
 .services-wrapper {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 80%;
+  margin: 0px auto;
 }
 
 .services-single {

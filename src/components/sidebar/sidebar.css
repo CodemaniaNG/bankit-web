@@ -46,6 +46,11 @@
   line-height: 24px; /* 150% */
 }
 
+.sidebar-single.active p {
+  color: var(--actions-default, #062983);
+  font-weight: 600;
+}
+
 .sidebar-single:hover p {
   color: #245ef5;
 }
