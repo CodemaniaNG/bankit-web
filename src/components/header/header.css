@@ -66,10 +66,10 @@
 }
 
 .header-login:hover {
-  background: #062983;
-  border: none;
-  color: white;
+  background: var(--palette-blue-200, #e6edfe);
+  color: #5482f7;
   transition: 1s all ease;
+  border: none;
 }
 
 .header-action .header-signup {
@@ -80,8 +80,8 @@
 }
 
 .header-signup:hover {
-  border: 1px solid #062983;
-  background: #fff;
-  color: #062983;
+  background: var(--palette-blue-200, #e6edfe);
+  color: #5482f7;
+  border: none;
   transition: 1s all ease;
 }

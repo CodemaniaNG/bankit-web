@@ -15,8 +15,8 @@
 }
 
 .sec-button:hover {
-  background: #062983;
-  border: none;
-  color: white;
+  background: var(--palette-blue-200, #e6edfe);
+  color: #5482f7;
   transition: 1s all ease;
+  border: none;
 }

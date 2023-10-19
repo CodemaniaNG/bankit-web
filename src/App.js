@@ -9,6 +9,9 @@ import ForgotPassword from "./pages/forgot-password/forgotPassword";
 import Dashboard from "./pages/dashboard/dashboard";
 import Transactions from "./pages/transactions/transactions";
 import Cards from "./pages/cards/cards";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import AdminLogin from "./pages/admin/admin-login/adminLogin";
 
 function App() {
   const variants = {
@@ -27,6 +30,7 @@ function App() {
         transition={{ type: "linear" }} // Set the transition to linear
         className="">
         <div className="App">
+          <ToastContainer />
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/auth/signup" element={<SignUp />} />
@@ -35,6 +39,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/transactions" element={<Transactions />} />
             <Route path="/cards" element={<Cards />} />
+            <Route path="/admin/login" element={<AdminLogin />} />
           </Routes>
         </div>
       </motion.div>

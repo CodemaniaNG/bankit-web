@@ -14,18 +14,20 @@ const Onboardinglayout = ({ children, type }) => {
   const settings = {
     dots: false,
     infinite: true,
+    fade: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 1500,
-    autoplaySpeed: 1000,
-    cssEase: "linear",
+    speed: 300,
+    autoplaySpeed: 3500,
+    cssEase: "cubic-bezier(0,0,0.58,1)",
     pauseOnHover: false,
     arrows: false,
+    useTransform: true,
   };
   return (
     <div className="onboarding-layout-container">
-      <div className={type === "final" ? "onboarding-layout-first" : "onboarding-layout-image"}>
+      <div className={type === "final" ? "onboarding-layout-first" : type === "admin" ? "onboarding-layout-first" : "onboarding-layout-image"}>
         {type === "final" ? (
           <div className="onboarding-layout-family">
             <div className="onboarding-layout-text">
@@ -37,6 +39,10 @@ const Onboardinglayout = ({ children, type }) => {
               <GooglePlay />
               <AppleStore />
             </div>
+          </div>
+        ) : type === "admin" ? (
+          <div>
+            <h2>Hello World</h2>
           </div>
         ) : (
           <Slider {...settings}>

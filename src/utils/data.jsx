@@ -68,3 +68,30 @@ export const transactionHistories = [
     status: "inflow",
   },
 ];
+
+export const report = [
+  {
+    title: "Recipient Bank",
+    value: "Opay",
+  },
+  {
+    title: "Status",
+    value: "Success",
+  },
+  {
+    title: "Fee",
+    value: "1000",
+  },
+  {
+    title: "Time",
+    value: "5:23 PM",
+  },
+  {
+    title: "Date",
+    value: "24 Jul, 2023",
+  },
+  {
+    title: "Transaction ID",
+    value: "xksjw-wnq-9292-ejdj",
+  },
+];
