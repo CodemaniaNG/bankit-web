@@ -4,12 +4,14 @@ import ProfilePic from "../../assets/profile-pic.png";
 import Bell from "../../svg-component/bell";
 import Coins from "../../assets/coins.png";
 import Search from "../../svg-component/search";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const profile = useSelector((state) => state.profile);
   return (
     <div className="navbar-container">
       <div className="navbar-text">
-        <h2>Hello Adam, Welcome back!</h2>
+        <h2>Hello {profile.user.firstName}, Welcome back!</h2>
         <p>Wednesday August 23rd, 2023.</p>
       </div>
       <div className="navbar-body">
