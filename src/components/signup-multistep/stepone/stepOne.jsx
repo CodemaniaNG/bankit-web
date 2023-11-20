@@ -20,7 +20,7 @@ const StepOne = ({ submit }) => {
     getValues,
     formState: { errors },
   } = useForm();
-  const [sendOtp, { data: otpSend, isLoading: newOtpLoad, isSuccess: newOtpSuccess, isError: newOtpFalse, error: newOtpErr, reset: newOtpReset }] = useSendOtpMutation();
+  const [sendOtp, { data: otpSend, isLoading: newOtpLoad, isSuccess: newOtpSuccess, isError: newOtpFalse, error: newOtpErr }] = useSendOtpMutation();
   useEffect(() => {
     if (newOtpSuccess) {
       if (otpSend) {
@@ -32,7 +32,7 @@ const StepOne = ({ submit }) => {
         //  }
       }
     }
-  }, [otpSend, newOtpSuccess, submit]);
+  }, [otpSend, newOtpSuccess, submit, getValues]);
   useEffect(() => {
     if (newOtpFalse) {
       if (newOtpErr) {

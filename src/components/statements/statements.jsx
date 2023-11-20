@@ -48,7 +48,14 @@ const Statements = ({ right, closeAction }) => {
                 ) : null}
               </div>
               <Input text={false} type="text" placeholder="Start date" />
-              <Input text={false} type="text" placeholder="End date" />
+              <Input
+                text={false}
+                type="text"
+                placeholder="End date"
+                action={() => {
+                  setActive(true);
+                }}
+              />
             </div>
           </div>
         </div>
