@@ -38,7 +38,7 @@ const LoginForm = ({ forward }) => {
         //  }
       }
     }
-  }, [loginUser, loginUserSuccess, forward]);
+  }, [loginUser, loginUserSuccess, forward, dispatch]);
   useEffect(() => {
     if (loginUserFalse) {
       if (loginUserErr) {
