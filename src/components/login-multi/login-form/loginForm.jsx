@@ -9,8 +9,11 @@ import PriButton from "../../primary-button/priButton";
 import { useNavigate } from "react-router-dom";
 import OnboardingHeader from "../../onboarding-header/onboardingHeader";
 import { useLoginMutation } from "../../../redux/api/mutationApi";
+import { useDispatch } from "react-redux";
+import { setProfile } from "../../../redux/slices/profileSlice";
 
 const LoginForm = ({ forward }) => {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -27,7 +30,7 @@ const LoginForm = ({ forward }) => {
   useEffect(() => {
     if (loginUserSuccess) {
       if (loginUser) {
-        console.log(loginUser);
+        dispatch(setProfile(loginUser));
 
         //  setCookie("accessToken", loginUser?.accessToken);
         //  if (getCookie("accessToken")) {
@@ -35,7 +38,7 @@ const LoginForm = ({ forward }) => {
         //  }
       }
     }
-  }, [loginUser, loginUserSuccess, forward]);
+  }, [loginUser, loginUserSuccess, forward, dispatch]);
   useEffect(() => {
     if (loginUserFalse) {
       if (loginUserErr) {
