@@ -5,8 +5,11 @@ import StepThree from "./stepthree/stepThree";
 import StepFour from "./stepFour/stepFour";
 import Onboardinglayout from "../../utils/onboarding-layout/onboardingLayout";
 import StepFive from "./stepFive/stepFive";
+import { useDispatch } from "react-redux";
+import { setProfile } from "../../redux/slices/profileSlice";
 
 const SignupMulti = () => {
+  const dispatch = useDispatch();
   const [count, setCount] = useState(0);
   const [type, setType] = useState("");
   const add = () => {
@@ -18,7 +21,14 @@ const SignupMulti = () => {
   const steps = () => {
     switch (count) {
       case 0:
-        return <StepOne submit={add} />;
+        return (
+          <StepOne
+            submit={(e) => {
+              dispatch(setProfile(e));
+              add();
+            }}
+          />
+        );
 
       case 1:
         return (

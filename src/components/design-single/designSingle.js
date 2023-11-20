@@ -5,7 +5,7 @@ import DoubleArrow from "../../svg-component/double-arrow/doubleArrow";
 
 const DesignSingle = ({ bgColor, title, text, type, img, color }) => {
   return (
-    <DesignLayout bgColor={bgColor} type={type}>
+    <DesignLayout bgcolor={bgColor} type={type}>
       <img src={img} alt="arrow" />
       <div className="design-single">
         <h2>{title}</h2>

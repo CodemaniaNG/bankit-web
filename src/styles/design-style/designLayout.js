@@ -4,7 +4,7 @@ const DesignLayout = styled.div`
   width: 100%;
   padding: 32px 64px;
   box-sizing: border-box;
-  background: ${({ bgColor }) => bgColor};
+  background: ${({ bgcolor }) => bgcolor};
   flex-direction: ${({ type }) => (type === "long" ? "unset" : "column")};
   // justify-content: center;
   align-items: ${({ type }) => (type === "long" ? "center" : "flex-start")};
@@ -21,7 +21,7 @@ const DesignLayout = styled.div`
   }
 
   .design-single h2 {
-    color: ${({ bgColor }) => (bgColor === "#fff" ? "#262626" : bgColor === "#FFF1CC" ? "#262626" : "white")};
+    color: ${({ bgcolor }) => (bgcolor === "#fff" ? "#262626" : bgcolor === "#FFF1CC" ? "#262626" : "white")};
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
@@ -29,7 +29,7 @@ const DesignLayout = styled.div`
   }
 
   .design-single p {
-    color: ${({ type, bgColor }) => (bgColor === "#FFF1CC" ? "#262626" : bgColor === "#fff" ? "#666" : type === "long" ? "white" : "#DBDBDB")};
+    color: ${({ type, bgcolor }) => (bgcolor === "#FFF1CC" ? "#262626" : bgcolor === "#fff" ? "#666" : type === "long" ? "white" : "#DBDBDB")};
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -45,7 +45,7 @@ const DesignLayout = styled.div`
   }
 
   .design-single div h3 {
-    color: ${({ bgColor }) => (bgColor === "#fff" ? "#062983" : bgColor === "#FFF1CC" ? "#062983" : "white")};
+    color: ${({ bgcolor }) => (bgcolor === "#fff" ? "#062983" : bgcolor === "#FFF1CC" ? "#062983" : "white")};
     font-size: 16px;
     font-style: normal;
     font-weight: 700;

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./bankList.css";
 import Search from "../../svg-component/search";
-import { banks } from "../../utils/data";
 import GTB from "../../assets/gtb.png";
 
-const BankList = ({ action }) => {
+const BankList = ({ action, array }) => {
   const [search, setSearch] = useState("");
   return (
     <div className="banklist-container">
@@ -18,7 +17,7 @@ const BankList = ({ action }) => {
           }}
         />
       </div>
-      {banks
+      {array
         ?.filter((items) => items.toLowerCase().includes(search.toLowerCase()))
         ?.map((item, index) => {
           return (

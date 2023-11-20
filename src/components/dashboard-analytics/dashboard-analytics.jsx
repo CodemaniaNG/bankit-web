@@ -4,10 +4,10 @@ import Cube from "../../svg-component/cube";
 import { formatter } from "../../utils/formatter/formatter";
 import Chart from "../../assets/chart.png";
 
-const DashboardAnalytics = () => {
+const DashboardAnalytics = ({ page }) => {
   return (
     <div className="dashboard-analytics">
-      <h2>Account analytics</h2>
+      {page ? null : <h2>Account analytics</h2>}
       <div className="dashboard-wrapper">
         <div className="dashboard-overview">
           <div>

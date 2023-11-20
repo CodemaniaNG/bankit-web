@@ -36,6 +36,17 @@
   width: 100%;
 }
 
+.step-one-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.step-one-groups > p {
+  font-size: 12px;
+  color: red;
+}
+
 .step-one-single {
   width: 100%;
   display: flex;
@@ -58,6 +69,7 @@
   border: none;
   padding: 10px 0px;
   background-color: transparent;
+  margin-top: 0px;
 }
 
 .step-hint-single div input[type="text"] {
@@ -75,16 +87,21 @@
   font-style: normal;
   font-weight: 500;
   line-height: 20px; /* 142.857% */
+  top: 4px;
 }
 
-.step-one-single div input:valid ~ span,
-.step-one-single div input:focus ~ span {
+/* .step-one-single div input:valid ~ span, */
+.step-one-single div input:not(:placeholder-shown) ~ span,
+.step-one-single div input:focus ~ span,
+.step-one-single .readonly ~ span {
   transform: translateX(0px) translateY(-10px);
 }
-.step-one-single div input:valid,
-.step-one-single div input:focus {
-  margin-top: 5px;
-  padding-bottom: 0px;
+/* .step-one-single div input:valid, */
+.step-one-single div input:not(:placeholder-shown),
+.step-one-single div input:focus,
+.readonly {
+  margin-top: 5px !important;
+  padding-bottom: 0px !important;
   color: var(--text-default, #262626);
   font-size: 16px;
   font-style: normal;

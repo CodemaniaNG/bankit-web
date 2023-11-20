@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
 import "./stepOne.css";
 import ArrowLeft from "../../../svg-component/arrowLeft";
 import PriButton from "../../primary-button/priButton";
@@ -10,8 +11,35 @@ import Unchecked from "../../../svg-component/unchecked";
 import validator from "validator";
 import { useNavigate } from "react-router-dom";
 import OnboardingHeader from "../../onboarding-header/onboardingHeader";
+import { useSendOtpMutation } from "../../../redux/api/mutationApi";
 
 const StepOne = ({ submit }) => {
+  const {
+    register,
+    handleSubmit,
+    getValues,
+    formState: { errors },
+  } = useForm();
+  const [sendOtp, { data: otpSend, isLoading: newOtpLoad, isSuccess: newOtpSuccess, isError: newOtpFalse, error: newOtpErr, reset: newOtpReset }] = useSendOtpMutation();
+  useEffect(() => {
+    if (newOtpSuccess) {
+      if (otpSend) {
+        console.log(otpSend);
+
+        //  setCookie("accessToken", otpSend?.accessToken);
+        //  if (getCookie("accessToken")) {
+        submit(getValues());
+        //  }
+      }
+    }
+  }, [otpSend, newOtpSuccess, submit]);
+  useEffect(() => {
+    if (newOtpFalse) {
+      if (newOtpErr) {
+        console.log(newOtpErr);
+      }
+    }
+  }, [newOtpErr, newOtpFalse]);
   const navigate = useNavigate();
   const [state, setState] = useState(false);
   const [symbol, setSymbol] = useState(false);
@@ -102,36 +130,90 @@ const StepOne = ({ submit }) => {
       </div>
       <div className="step-one-body">
         <OnboardingHeader title="Get Started" text="Enter your details to create a Bankit account" />
-        <form onSubmit={submit}>
+        <form
+          onSubmit={handleSubmit((e) => {
+            // e.preventDefault();
+            const data = {
+              phoneNumber: e.phoneNumber,
+            };
+            sendOtp(data);
+          })}>
           <div className="step-one-form">
             <div className="step-one-group">
-              <div className="step-one-single">
-                <div>
-                  <input type="text" required />
-                  <span>First name</span>
+              <div className="step-one-groups">
+                <div className="step-one-single">
+                  <div>
+                    <input
+                      type="text"
+                      name="firstName"
+                      placeholder=" "
+                      {...register("firstName", {
+                        required: "First Name is required",
+                      })}
+                    />
+                    <span>First name</span>
+                  </div>
+                  <Info />
                 </div>
-                <Info />
+                {errors.firstName ? <p>{errors?.firstName?.message}</p> : null}
               </div>
-              <div className="step-one-single">
-                <div>
-                  <input type="text" required="required" />
-                  <span>Last name</span>
+              <div className="step-one-groups">
+                <div className="step-one-single">
+                  <div>
+                    <input
+                      type="text"
+                      name="lastName"
+                      placeholder=" "
+                      {...register("lastName", {
+                        required: "Last Name is required",
+                      })}
+                    />
+                    <span>Last name</span>
+                  </div>
+                  <Info />
                 </div>
-                <Info />
+                {errors.lastName ? <p>{errors?.lastName?.message}</p> : null}
               </div>
-              <div className="step-one-single">
-                <div>
-                  <input type="tel" required />
-                  <span>Phone number</span>
+              <div className="step-one-groups">
+                <div className="step-one-single">
+                  <div>
+                    <input
+                      type="tel"
+                      name="phoneNumber"
+                      placeholder=" "
+                      {...register(
+                        "phoneNumber",
+                        {
+                          required: "Phone Number is required",
+                        },
+                        {
+                          maxLength: 11,
+                        }
+                      )}
+                    />
+                    <span>Phone number</span>
+                  </div>
+                  <Info />
                 </div>
-                <Info />
+                {errors.phoneNumber ? <p>{errors?.phoneNumber?.message}</p> : null}
               </div>
-              <div className="step-one-single">
-                <div>
-                  <input type={state ? "text" : "password"} required onInput={handlePwd} />
-                  <span>Password</span>
+              <div className="step-one-groups">
+                <div className="step-one-single">
+                  <div>
+                    <input
+                      type={state ? "text" : "password"}
+                      name="password"
+                      placeholder=" "
+                      onInput={handlePwd}
+                      {...register("password", {
+                        required: "Password is required",
+                      })}
+                    />
+                    <span>Password</span>
+                  </div>
+                  {state ? <OpenEye action={action} color="#474747" /> : <ClosedEye color="#474747" action={action} />}
                 </div>
-                {state ? <OpenEye action={action} color="#474747" /> : <ClosedEye color="#474747" action={action} />}
+                {errors.password ? <p>{errors?.password?.message}</p> : null}
               </div>
             </div>
             <div className="step-one-hint">
@@ -156,7 +238,7 @@ const StepOne = ({ submit }) => {
               </div>
             </div>
           </div>
-          <PriButton text="Next" active={active} />
+          <PriButton text="Next" active={active} load={newOtpLoad} />
         </form>
       </div>
       <p>

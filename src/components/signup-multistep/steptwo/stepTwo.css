@@ -86,14 +86,14 @@
   transition: all 0.2s ease-in-out;
 }
 
-input[type="number"] {
+.otp-form input[type="number"] {
   font-size: 20px;
   -moz-appearance: textfield;
   appearance: textfield;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+.otp-form input::-webkit-outer-spin-button,
+.otp-form input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }

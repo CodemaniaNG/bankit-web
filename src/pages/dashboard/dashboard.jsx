@@ -10,9 +10,12 @@ import User from "../../svg-component/user";
 import Contact from "../../svg-component/contact";
 import DashboardAnalytics from "../../components/dashboard-analytics/dashboard-analytics";
 import TransactionHistory from "../../components/transaction-history/transactionHistory";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
   const array = [];
+  const profile = useSelector((state) => state.profile);
+  console.log(profile);
   return (
     <DashboardLayout>
       <div className="dashboard-container">

@@ -1,0 +1,12 @@
+.get-airtime {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-bottom: 52px;
+}
+
+.get-airtime > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

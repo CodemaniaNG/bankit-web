@@ -17,7 +17,13 @@ const LoginMulti = () => {
   const steps = () => {
     switch (count) {
       case 0:
-        return <LoginForm forward={add} />;
+        return (
+          <LoginForm
+            forward={() => {
+              navigate("/dashboard");
+            }}
+          />
+        );
       case 1:
         return (
           <StepTwo

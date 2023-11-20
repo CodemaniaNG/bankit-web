@@ -1,3 +1,12 @@
+import AccountSvg from "../svg-component/account";
+import FaqSvg from "../svg-component/faq";
+import Info from "../svg-component/info";
+import Kobo from "../svg-component/kobo";
+import PasswordSvg from "../svg-component/password";
+import Reset from "../svg-component/reset";
+import StatementSvg from "../svg-component/statement";
+import Verification from "../svg-component/verification";
+
 export const statuses = ["All status", "Successful", "Processing", "Failed", "Refunded", "Cancelled"];
 export const categories = ["Inflow", "Outflow"];
 
@@ -95,3 +104,78 @@ export const report = [
     value: "xksjw-wnq-9292-ejdj",
   },
 ];
+
+export const settingsData = [
+  {
+    title: "Account",
+    body: [
+      {
+        title: "Account information",
+        icon: <AccountSvg />,
+      },
+      {
+        title: "Verification",
+        icon: <Verification />,
+      },
+      {
+        title: "Statement and reports",
+        icon: <StatementSvg />,
+      },
+      {
+        title: "Display kobo",
+        icon: <Kobo />,
+      },
+    ],
+  },
+  {
+    title: "Security",
+    body: [
+      {
+        title: "Password",
+        icon: <PasswordSvg />,
+      },
+      {
+        title: "Reset PIN",
+        icon: <Reset />,
+      },
+    ],
+  },
+  {
+    title: "Help",
+    body: [
+      {
+        title: "Help & FAQs",
+        icon: <FaqSvg />,
+      },
+      {
+        title: "Learning Hub",
+        icon: <Info />,
+      },
+    ],
+  },
+];
+
+export const list = [
+  {
+    value: "N2m",
+    height: "106px",
+  },
+  {
+    value: "N500K",
+    height: "82px",
+  },
+  {
+    value: "N100K",
+    height: "72px",
+  },
+  {
+    value: "N50K",
+    height: "32px",
+  },
+  {
+    value: "N21K",
+    height: "24px",
+  },
+];
+
+export const airtimeList = ["MTN", "Airtel", "Glo", "9-mobile"];

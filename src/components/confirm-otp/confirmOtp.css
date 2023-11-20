@@ -1,0 +1,19 @@
+.confirm-otp {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.confirm-otp > h2 {
+  color: var(--text-default, #262626);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 150% */
+}
+
+.confirm-otp-body {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}

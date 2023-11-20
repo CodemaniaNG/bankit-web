@@ -8,7 +8,7 @@ import PriButton from "../primary-button/priButton";
 import { formatter } from "../../utils/formatter/formatter";
 import Right from "../../svg-component/right";
 
-const TransactionSuccess = ({ right, save, action, closeAction }) => {
+const TransactionSuccess = ({ right, save, action, closeAction, amount, first, second, recipient }) => {
   return (
     <SupportStyled right={right}>
       <div className="transaction-success">
@@ -21,7 +21,7 @@ const TransactionSuccess = ({ right, save, action, closeAction }) => {
             <div className="transaction-success-text">
               <h2>Transaction Successful</h2>
               <p>
-                You have sent <span>{formatter.format(5000)} </span> Yakub Oji
+                {first} <span>{formatter.format(amount)} </span> {second} <span>{recipient}</span>
               </p>
             </div>
           </div>

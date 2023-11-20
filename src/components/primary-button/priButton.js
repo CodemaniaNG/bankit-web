@@ -1,11 +1,16 @@
 import React from "react";
 import "./priButton.css";
+import Loader from "../loader/loader";
 
-const PriButton = ({ text, action, type, active }) => {
+const PriButton = ({ text, action, type, active, load }) => {
   return active ? (
-    <button onClick={action} className="pri-button" type={type}>
-      {text}
-    </button>
+    load ? (
+      <Loader />
+    ) : (
+      <button onClick={action} className="pri-button" type={type}>
+        {text}
+      </button>
+    )
   ) : (
     <button disabled className="pri-disabled">
       {text}

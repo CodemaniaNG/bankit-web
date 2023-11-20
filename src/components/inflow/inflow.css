@@ -1,0 +1,119 @@
+.inflow-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  border-radius: 16px;
+  background: var(--surface-default, #fff);
+  box-shadow: 0px 1px 2px 0px rgba(6, 41, 131, 0.05);
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.inflow-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inflow-arrow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.inflow-arrow > h2 {
+  color: var(--text-default, #262626);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+}
+
+.inflow-arrow > div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inflow-arrow .purple {
+  background: #fce8fc;
+}
+
+.inflow-arrow .orange {
+  background: var(--palette-orange-100, #fef7f0);
+}
+
+.inflow-amount {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-end;
+}
+
+.inflow-amount h2 {
+  color: var(--text-default, #262626);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+}
+
+.inflow-amount p {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.inflow-amount .decline {
+  color: var(--text-critical, #c52d26);
+}
+
+.inflow-amount .growth {
+  color: var(--text-success, #059d02);
+}
+
+.inflow-line {
+  width: 100%;
+  height: 1px;
+  background: var(--border-default, #f2f2f2);
+}
+
+.inflow-contributors {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inflow-contributors > h2 {
+  color: var(--text-subdued, #b2b2b2);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+}
+
+.inflow-cont {
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.inflow-rectan {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 20%;
+  align-items: center;
+  /* padding: 0px 14px; */
+  box-sizing: border-box;
+}

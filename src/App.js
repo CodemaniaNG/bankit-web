@@ -12,6 +12,8 @@ import Cards from "./pages/cards/cards";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AdminLogin from "./pages/admin/admin-login/adminLogin";
+import Settings from "./pages/settings/settings";
+import Analytics from "./pages/analytics/analytics";
 
 function App() {
   const variants = {
@@ -37,8 +39,10 @@ function App() {
             <Route path="/auth/login" element={<Login />} />
             <Route path="/auth/forgot-password" element={<ForgotPassword />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/analytics" element={<Analytics />} />
             <Route path="/transactions" element={<Transactions />} />
             <Route path="/cards" element={<Cards />} />
+            <Route path="/settings" element={<Settings />} />
             <Route path="/admin/login" element={<AdminLogin />} />
           </Routes>
         </div>

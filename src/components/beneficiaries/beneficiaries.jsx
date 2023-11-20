@@ -2,10 +2,13 @@ import React from "react";
 import "./beneficiaries.css";
 import Profile from "../../assets/profile-pic.png";
 
-const Beneficiaries = ({ array, title, img }) => {
+const Beneficiaries = ({ array, title, img, page }) => {
   return (
-    <div className="beneficiaries-container">
-      <h2>{title}</h2>
+    <div className={page ? "beneficiaries-containers" : "beneficiaries-container"}>
+      <div className="beneficiaries-header">
+        <h2>{title}</h2>
+        <p>View all &gt;</p>
+      </div>
       {array.length === 0 ? (
         <>
           <div className="beneficiaries-user">{img}</div>

@@ -20,6 +20,9 @@ const TransactionPin = ({ right, closeAction, action }) => {
             completed={() => {
               setActive(true);
             }}
+            otp={(e) => {
+              console.log(e);
+            }}
           />
           <PriButton text="Proceed" active={active} action={action} />
         </div>

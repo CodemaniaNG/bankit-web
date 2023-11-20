@@ -1,0 +1,124 @@
+.statements-container {
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+}
+
+.statements-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.statements-wrapper > h2 {
+  color: var(--text-default, #262626);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 150% */
+}
+
+.statements-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.statements-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statements-text h2 {
+  color: var(--text-default, #262626);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px; /* 166.667% */
+}
+
+.statements-text p {
+  color: var(--text-secondary, #666);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+
+.statements-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.statements-format {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border-default, #f2f2f2);
+  background: var(--surface-subdued, #fafafa);
+  padding: 8px 24px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.statements-formats {
+  position: relative;
+}
+
+.statements-format > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statements-format > div p {
+  color: var(--text-subdued, #b2b2b2);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+}
+
+.statements-format > div h2 {
+  color: var(--text-default, #262626);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+}
+
+.statements-dropdown {
+  position: absolute;
+  left: 0px;
+  top: 92px;
+  display: flex;
+  padding: 32px 24px;
+  box-sizing: border-box;
+  z-index: 2;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  border-radius: 8px;
+  background: var(--surface-default, #fff);
+  box-shadow: 0px 4px 48px 0px rgba(26, 26, 26, 0.12);
+  transition: 2s;
+}
+
+.statements-single {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.statements-single h2 {
+  color: var(--text-secondary, #666);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}

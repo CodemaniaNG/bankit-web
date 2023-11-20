@@ -1,22 +1,17 @@
 import React, { useState } from "react";
 import "./sendMoney.css";
 import Input from "../input/input";
-import BankList from "../bank-list/bankList";
-import CaretUp from "../../svg-component/caret-up";
-import CaretDown from "../../svg-component/caret-down";
-import OutsideClick from "../outside-click/outsideClick";
-import { amount } from "../../utils/data";
+import { amount, banks } from "../../utils/data";
 import { formatter } from "../../utils/formatter/formatter";
 import PriButton from "../primary-button/priButton";
 import SaveContact from "../save-contact/saveContact";
 import TransactionSuccess from "../transaction-success/transactionSuccess";
 import TransactionPin from "../transaction-pin/transactionPin";
+import Select from "../select/select";
 
 const SendMoney = () => {
-  const [bank, setBank] = useState("");
-  const [suggestion, setSuggestion] = useState(amount);
+  // const [suggestion, setSuggestion] = useState(amount);
   const [amountPrice, setAmountPrice] = useState("");
-  const [bankState, setBankState] = useState(false);
   const [active, setActive] = useState(false);
   const [right4, setRight4] = useState("-700px");
   const [right5, setRight5] = useState("-700px");
@@ -27,32 +22,7 @@ const SendMoney = () => {
         <p>Start typing “@” to enter a username.</p>
       </div>
       <Input type="text" placeholder="Enter account number or Bankit username" text={false} />
-      <div className="send-money-bank">
-        <OutsideClick
-          onClickOutside={() => {
-            setBankState(false);
-          }}>
-          <div
-            className="send-money-container"
-            onClick={() => {
-              setBankState(!bankState);
-            }}>
-            <div>
-              <p>Bank</p>
-              {bankState || bank !== "" ? <h2>{bank}</h2> : null}
-            </div>
-            {bankState ? <CaretUp /> : <CaretDown />}
-          </div>
-          {bankState ? (
-            <BankList
-              action={(e) => {
-                setBank(e.target.outerText);
-                setBankState(false);
-              }}
-            />
-          ) : null}
-        </OutsideClick>
-      </div>
+      <Select array={banks} title="Bank" />
       <div className="send-money-amount">
         <div className="send-money-wrapper">
           <label>Enter Amount</label>
@@ -66,7 +36,7 @@ const SendMoney = () => {
                 setAmountPrice(e.target.value);
                 if (e.target.value.length > 0) {
                   setActive(true);
-                  setSuggestion((arr) => [...arr, e.target.value]);
+                  // setSuggestion((arr) => [...arr, e.target.value]);
                 } else {
                   setActive(false);
                 }
@@ -75,7 +45,7 @@ const SendMoney = () => {
           </div>
         </div>
         <div className="send-suggestion">
-          {suggestion?.map((item, index) => {
+          {amount?.map((item, index) => {
             return (
               <p
                 key={index}
@@ -118,6 +88,10 @@ const SendMoney = () => {
         save={() => {
           setRight6("0px");
         }}
+        first="You have sent"
+        amount={5000}
+        second="to"
+        recipient="Yakub Oji"
       />
       <SaveContact
         right={right6}
