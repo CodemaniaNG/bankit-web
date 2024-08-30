@@ -1,44 +1,71 @@
-import React from "react";
-import "./welcome.css";
-import Header from "../header/header";
-import PriButton from "../primary-button/priButton";
-import SecButton from "../sec-button/secButton";
-import Brands from "../brands/brands";
-import WelcomeImage from "../../assets/welcome.png";
-import Layout from "../../utils/layout/layout";
+import React, { useEffect, useState } from "react"
+import WelcomeCard from "../../assets/BankitCardBlack.png"
+import WelcomeImage from "../../assets/iphonImage.png"
+import Cover from "../cover"
+import Header from "../header/header"
+import PriButton from "../primary-button/priButton"
+import "./welcome.css"
 
 const Welcome = () => {
+  const [width, setWidth] = useState(0)
+  const [height, setHeight] = useState(0)
+  const handleWindowResize = () => {
+    setWidth(window.innerWidth)
+    setHeight(window.innerHeight)
+  }
+  useEffect(() => {
+    setWidth(window.innerWidth)
+    setHeight(window.innerHeight)
+    handleWindowResize()
+    window.addEventListener("resize", handleWindowResize)
+    return () => window.removeEventListener("resize", handleWindowResize)
+  }, [width])
   return (
     <div className="welcome-container">
       <Header />
-      <div className="welcome-wrapper">
-        <Layout>
+      <Cover>
+        <div className="welcome-wrapper">
           <div className="welcome-cont">
-            <div className="welcome-hero">
+            <div className="welcome-hero" data-aos="fade-right">
               <div className="welcome-text">
                 <h2>
-                  Banking made just for <span>you</span>
+                  Live your best life with <span>Bankit!</span>
                 </h2>
-                <p>Seamless Banking at your Fingertrips</p>
+                <p>
+                  Say goodbye to boring banking! With Bankit, every deposit, and
+                  goal earns you rewards. Watch your savings grow as you conquer
+                  financial challenges and unlock new achievements!
+                </p>
               </div>
               <div className="welcome-action">
                 <div>
-                  <PriButton text="Get started" active={true} />
+                  <a href="#earlyAccessForm">
+                    <PriButton text="Get Early Access" active={true} />
+                  </a>
                 </div>
-                <div>
-                  <SecButton text="Download App" />
-                </div>
+
+                {/* <div>
+                  <SecButton svg={true} text="Download App" />
+                </div> */}
               </div>
             </div>
-            <div className="welcome-img">
-              <img src={WelcomeImage} alt="welcome" />
-            </div>
+            {width > 900 ? (
+              <div className="welcome-img" data-aos="fade-left">
+                <img src={WelcomeCard} className="card" alt="welcome" />
+                <img
+                  src={WelcomeImage}
+                  alt="welcome"
+                  className="phone"
+                  width={width > 1200 ? 455 : 300}
+                  height={width > 1200 ? 766 : 400}
+                />
+              </div>
+            ) : null}
           </div>
-        </Layout>
-      </div>
-      <Brands />
+        </div>
+      </Cover>
     </div>
-  );
-};
+  )
+}
 
-export default Welcome;
+export default Welcome

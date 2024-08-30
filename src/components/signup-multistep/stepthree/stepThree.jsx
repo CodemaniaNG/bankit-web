@@ -1,45 +1,64 @@
-import React, { useState, useEffect } from "react";
-import "./stepThree.css";
-import PriButton from "../../primary-button/priButton";
-import ArrowLeft from "../../../svg-component/arrowLeft";
-import Info from "../../../svg-component/info";
-import OnboardingHeader from "../../onboarding-header/onboardingHeader";
-import { useRegisterNewUserMutation } from "../../../redux/api/mutationApi";
-import { useSelector } from "react-redux";
+import React, { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+// import { useRegisterNewUserMutation } from "../../../redux/api/mutationApi"
+import { setCompProfile } from "../../../redux/slices/compProfileSlice"
+import Info from "../../../svg-component/info"
+import OnboardingHeader from "../../onboarding-header/onboardingHeader"
+import PriButton from "../../primary-button/priButton"
+import "./stepThree.css"
+const StepThree = ({ back, forward, page }) => {
+  const [active, setActive] = useState(false)
+  const suggesstions = ["@adolf", "@adam", "@aadolfus"]
+  const dispatch = useDispatch()
+  const [value, setValue] = useState("")
+  const { profile } = useSelector((store) => store)
+  // const [
+  //   registerNewUser,
+  //   {
+  //     data: registerUser,
+  //     isLoading: newUserLoad,
+  //     isSuccess: newUserSuccess,
+  //     isError: newUserFalse,
+  //     error: newUserErr,
+  //   },
+  // ] = useRegisterNewUserMutation()
 
-const StepThree = ({ back, forward }) => {
-  const [active, setActive] = useState(false);
-  const suggesstions = ["@adolf", "@adam", "@aadolfus"];
-  const [value, setValue] = useState("");
-  const profile = useSelector((state) => state.profile);
-  const [registerNewUser, { data: registerUser, isLoading: newUserLoad, isSuccess: newUserSuccess, isError: newUserFalse, error: newUserErr }] = useRegisterNewUserMutation();
-  useEffect(() => {
-    if (newUserSuccess) {
-      if (registerUser) {
-        console.log(registerUser);
+  // useEffect(() => {
+  //   if (newUserSuccess) {
+  //     console.log(registerUser)
+  //     dispatch(setToken(registerUser?.accessToken))
+  //     forward()
+  //   } else if (newUserFalse) {
+  //     if (newUserErr) {
+  //       showToastErrorMessage()
+  //     }
+  //   }
+  // }, [newUserErr, newUserSuccess, newUserFalse])
 
-        //  setCookie("accessToken", registerUser?.accessToken);
-        //  if (getCookie("accessToken")) {
-        forward();
-        //  }
-      }
+  const showToastErrorMessage = () => {
+    toast.error("Account creation failed", {
+      position: "top-right",
+    })
+  }
+
+  const setName = () => {
+    const data = {
+      first_name: value,
     }
-  }, [registerUser, newUserSuccess, forward]);
-  useEffect(() => {
-    if (newUserFalse) {
-      if (newUserErr) {
-        console.log(newUserErr);
-      }
-    }
-  }, [newUserErr, newUserFalse]);
+    dispatch(setCompProfile(data))
+  }
   return (
     <div className="stepthree-container">
+      <ToastContainer />
       <div className="stepthree-wrapper">
-        <div className="back-button">
-          <ArrowLeft action={back} />
-        </div>
         <div className="stepthree-cont">
-          <OnboardingHeader title="Just One More Thing..." text="Create your Bankit User name" />
+          <OnboardingHeader
+            title="Tell us your name"
+            text="Enter your details to create a Bankit account "
+            currentStep={page + 1}
+          />
           <div className="step-one-single">
             <div>
               <input
@@ -47,48 +66,27 @@ const StepThree = ({ back, forward }) => {
                 required
                 value={value}
                 onChange={(e) => {
-                  setValue(e.target.value);
-                  setActive(true);
+                  setValue(e.target.value)
+                  setActive(true)
                   // setSuggestions((arr) => [...arr, e.target.value]);
                 }}
               />
-              <span>Create a username</span>
+              <span>First name</span>
             </div>
             <Info />
           </div>
-        </div>
-        <div className="stepthree-suggestions">
-          {suggesstions?.map((item, index) => {
-            return (
-              <p
-                key={index}
-                onClick={() => {
-                  setValue(item);
-                  setActive(true);
-                }}>
-                {item}
-              </p>
-            );
-          })}
         </div>
       </div>
       <PriButton
         text="Next"
         active={active}
         action={() => {
-          const data = {
-            password: profile.password,
-            phone: profile.phoneNumber,
-            firstName: profile.firstName,
-            lastName: profile.lastName,
-            username: value,
-          };
-          registerNewUser(data);
+          forward()
+          setName()
         }}
-        load={newUserLoad}
       />
     </div>
-  );
-};
+  )
+}
 
-export default StepThree;
+export default StepThree

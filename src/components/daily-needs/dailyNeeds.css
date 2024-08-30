@@ -2,23 +2,59 @@
   width: 100%;
   background: url("../../assets/doodle.svg") no-repeat rgba(6, 41, 131, 0.8);
   display: flex;
-  padding: 96px 0px;
+  padding: 0px 0px;
   flex-direction: column;
 }
 
 .daily-needs-wrapper {
   display: flex;
   flex-direction: column;
+  padding: 20px 0px;
   gap: 80px;
 }
-
+.daily_neads_list_div {
+  display: grid;
+  grid-template-columns: 35% 33% 33%;
+  gap: 4px;
+  justify-content: space-evenly;
+}
+.daily_neads_list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+.daily_neads_list p {
+  display: flex;
+  gap: 4px;
+  color: white;
+  align-items: center;
+}
 .daily-needs-header {
   display: flex;
   flex-direction: column;
   gap: 8px;
   text-align: center;
 }
-
+.design-wrappers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 32px;
+}
+.daily_needs_copy {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+.daily_needs_copy h1 {
+  color: white;
+}
+.daily_needs_copy p {
+  color: white;
+}
 .daily-needs-header p {
   color: var(--primary-50, #9cbfff);
   font-size: 18px;
@@ -26,7 +62,8 @@
   font-weight: 700;
   line-height: 30px; /* 166.667% */
 }
-
+.daily_needs_copy h1 {
+}
 .daily-needs-header h2 {
   color: var(--primitives-white, #fff);
   font-size: 40px;
@@ -37,4 +74,13 @@
 
 .daily-needs-header h2 span {
   color: var(--palette-blue-300, #cedbfd);
+}
+
+@media screen and (max-width: 975px) {
+  .daily-needs-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding-bottom: 47px;
+  }
 }
