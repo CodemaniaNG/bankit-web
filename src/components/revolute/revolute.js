@@ -1,43 +1,71 @@
-import React from "react";
-import "./revolute.css";
-import Phone from "../../assets/iPhone.png";
-import Layout from "../../utils/layout/layout";
-import PlayStore from "../../svg-component/play-store/playStore";
-import AppStore from "../../svg-component/app-store/appStore";
-
+import React, { useState } from "react"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+import Phone from "../../assets/phoneImageII.png"
+import PhoneI from "../../assets/transactionI.png"
+import PhoneII from "../../assets/trnasactionlist.png"
+import Layout from "../../utils/layout/layout"
+import PriButton from "../primary-button/priButton"
+import "./revolute.css"
 const Revolute = () => {
+  const [sub, setSub] = useState(false)
+  const notify = () => setSub((prev) => !prev)
   return (
     <Layout>
-      <div className="revolute-container">
+      <ToastContainer
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+
+      <div
+        className="revolute-container"
+        id="earlyAccessForm"
+        data-aos="fade-up"
+      >
         <div className="revolute-text">
           <div className="revolute-text1">
-            <h2>
-              Revolutionize Your <span>Finances</span>
-            </h2>
-            <p>Download BankIt App</p>
+            <h2>One app for everything finance</h2>
+            <p>
+              Be among the first people to get Bankit and earn VIP access to win
+              up to N100,000
+            </p>
           </div>
           <div className="revolute-text-store">
-            <div className="revolute-store">
-              <PlayStore />
-              <div>
-                <h2>Get it on</h2>
-                <p>Play store</p>
-              </div>
-            </div>
-            <div className="revolute-store">
-              <AppStore />
-              <div>
-                <h2>Get it on</h2>
-                <p>App store</p>
-              </div>
+            <input type="text" placeholder="Name" />
+
+            <input type="text" placeholder="Email Address" />
+          </div>
+          <div className="welcome-actions">
+            <div>
+              <PriButton
+                text="Get Early Access"
+                active={true}
+                action={notify}
+              />
+
+              {sub && (
+                <div className="subbed">
+                  <p>
+                    Congratulations! You've secured your spot for early access
+                    to BanKit.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
+
         <div className="revolute-img">
-          <img src={Phone} alt="phone" />
+          <img src={PhoneI} alt="phone" className="revoplute_imageI" />
+          <img src={PhoneII} alt="phone" className="revoplute_imageII" />
+          <img src={Phone} alt="phone" className="revoplute_image" />
         </div>
       </div>
     </Layout>
-  );
-};
-export default Revolute;
+  )
+}
+export default Revolute
