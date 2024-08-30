@@ -1,0 +1,11 @@
+.cardflex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.transactionFeed {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}

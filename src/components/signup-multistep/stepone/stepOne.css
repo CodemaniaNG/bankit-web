@@ -58,7 +58,12 @@
   padding: 8px 24px;
   box-sizing: border-box;
 }
-
+.input_tel {
+  width: 20% !important;
+}
+.input_tel_text {
+  margin-right: 10px;
+}
 .step-one-single div {
   position: relative;
   width: 95%;
@@ -71,7 +76,21 @@
   background-color: transparent;
   margin-top: 0px;
 }
+.step-one-single div select {
+  width: 100%;
+  border: none;
+  padding: 10px 0px;
+  background-color: transparent;
+  margin-top: 0px;
+}
 
+.step-one-single div textarea {
+  width: 100%;
+  border: none;
+  padding: 10px 0px;
+  background-color: transparent;
+  margin-top: 0px;
+}
 .step-hint-single div input[type="text"] {
   text-transform: capitalize;
 }
@@ -171,4 +190,23 @@
   font-weight: 700;
   line-height: 24px; /* 150% */
   text-transform: capitalize;
+}
+@media screen and (max-width: 975px) {
+  .step-one-single {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    border: 1px solid var(--border-default, #f2f2f2);
+    background: var(--surface-subdued, #fafafa);
+    padding: 8px 2px;
+    box-sizing: border-box;
+  }
+  .step-one-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 }

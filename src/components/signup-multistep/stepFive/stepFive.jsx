@@ -1,36 +1,87 @@
-import React from "react";
-import "./stepFive.css";
-import ArrowLeft from "../../../svg-component/arrowLeft";
-import Rocket from "../../../assets/rocket.png";
-import PriButton from "../../primary-button/priButton";
-import SecButton from "../../sec-button/secButton";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+// import { useRegisterNewUserMutation } from "../../../redux/api/mutationApi"
+import { setCompProfile } from "../../../redux/slices/compProfileSlice"
+import Info from "../../../svg-component/info"
+import OnboardingHeader from "../../onboarding-header/onboardingHeader"
+import PriButton from "../../primary-button/priButton"
+import "./stepFive.css"
+const StepFive = ({ back, forward, page }) => {
+  const [active, setActive] = useState(false)
+  const suggesstions = ["@adolf", "@adam", "@aadolfus"]
+  const dispatch = useDispatch()
+  const [value, setValue] = useState("")
+  // const [
+  //   registerNewUser,
+  //   {
+  //     data: registerUser,
+  //     isLoading: newUserLoad,
+  //     isSuccess: newUserSuccess,
+  //     isError: newUserFalse,
+  //     error: newUserErr,
+  //   },
+  // ] = useRegisterNewUserMutation()
 
-const StepFive = () => {
-  const navigate = useNavigate();
+  // useEffect(() => {
+  //   if (newUserSuccess) {
+  //     console.log(registerUser)
+  //     dispatch(setToken(registerUser?.accessToken))
+  //     forward()
+  //   } else if (newUserFalse) {
+  //     if (newUserErr) {
+  //       showToastErrorMessage()
+  //     }
+  //   }
+  // }, [newUserErr, newUserSuccess, newUserFalse])
+
+  const showToastErrorMessage = () => {
+    toast.error("Account creation failed", {
+      position: "top-right",
+    })
+  }
+  const { compProfile } = useSelector((store) => store)
+  const setName = () => {
+    const updatedData = {
+      ...compProfile,
+      passcode: value,
+    }
+
+    dispatch(setCompProfile(updatedData))
+    forward()
+  }
   return (
-    <div className="stepfive-container">
-      <div className="back-button">
-        <ArrowLeft />
-      </div>
-      <div className="stepfive-wrapper">
-        <div className="stepfive-item">
-          <img src={Rocket} alt="rocket" />
-          <h2>Tier Upgrade</h2>
-          <p>Continue your tier upgrade on our mobile app</p>
-        </div>
-        <div className="stepfive-button">
-          <SecButton
-            text="Proceed to Dashboard"
-            action={() => {
-              navigate("/dashboard");
-            }}
+    <div className="stepthree-container">
+      <ToastContainer />
+      <div className="stepthree-wrapper">
+        <div className="stepthree-cont">
+          <OnboardingHeader
+            title="Create a password"
+            text="Enter your details to create a Bankit account  "
+            currentStep={page + 1}
           />
-          <PriButton text="Open app" active={true} />
+          <div className="step-one-single">
+            <div>
+              <input
+                type="password"
+                required
+                value={value}
+                onChange={(e) => {
+                  setValue(e.target.value)
+                  setActive(true)
+                  // setSuggestions((arr) => [...arr, e.target.value]);
+                }}
+              />
+              <span>Password</span>
+            </div>
+            <Info />
+          </div>
         </div>
       </div>
+      <PriButton text="Next" active={active} action={setName} />
     </div>
-  );
-};
+  )
+}
 
-export default StepFive;
+export default StepFive
