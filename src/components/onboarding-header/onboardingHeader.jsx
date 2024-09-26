@@ -10,7 +10,7 @@ const OnboardingHeader = ({ text, title, currentStep, screen }) => {
       </div>
       {screen == "login" ? null : (
         <div className="onboard_head_flex_step">
-          <p>Step {currentStep} of 5</p>
+          <p>Step {currentStep} of 8</p>
         </div>
       )}
     </div>

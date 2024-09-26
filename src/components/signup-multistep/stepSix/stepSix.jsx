@@ -54,7 +54,7 @@ const StepSix = ({ back, forward, page }) => {
           <div className="step-one-single">
             <div>
               <input
-                type="text"
+                type="password"
                 required
                 value={value}
                 onChange={(e) => {

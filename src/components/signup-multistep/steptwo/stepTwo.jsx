@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 // import {
@@ -10,6 +10,7 @@ import { useVerifyPhoneMutation } from "../../../redux/api/mutationApi"
 import Otp from "../../otp/otp"
 import PriButton from "../../primary-button/priButton"
 import "./stepTwo.css"
+import { setToken } from "../../../redux/slices/tokenSlice"
 const StepTwo = ({
   back,
   forward,
@@ -25,6 +26,9 @@ const StepTwo = ({
   const [otp, setOtp] = useState("")
   const { profile } = useSelector((store) => store)
   console.log(profile)
+
+  const dispatch = useDispatch()
+
   // const [
   //   verifyOtp,
   //   {
@@ -97,8 +101,13 @@ const StepTwo = ({
   //     )
   //   }
   // }, [])
+
+
   useEffect(() => {
     if (verifyPhoneSuccess) {
+      toast.success('Phone verification successful!');
+      console.log('Server response:', verifyPhoneData);
+      dispatch(setToken(verifyPhoneData.data.auth_token))
       forward()
     } else if (verifyPhoneErr) {
       showToastErrorMessage()

@@ -75,19 +75,21 @@ const LoginPassword = ({ forward, forwardToAdmin, next, returnBack }) => {
 
   useEffect(() => {
     if (loginUserSuccess) {
-      getProfileReset()
       dispatch(setToken(loginUser?.data?.auth_token))
+      getProfileReset()
     } else if (loginUserErr) {
       showToastErrorMessage()
       returnBack()
     }
   }, [loginUserSuccess, loginUserErr])
+
   useEffect(() => {
     if (getProfileSuccess) {
       dispatch(setProfile(getProfileData?.data))
       forward()
     }
   }, [getProfileSuccess])
+
   return (
     <div className="loginform-container">
       <ToastContainer />
@@ -119,7 +121,7 @@ const LoginPassword = ({ forward, forwardToAdmin, next, returnBack }) => {
                   <div className="step-one-single">
                     <div>
                       <input
-                        type="text"
+                        type="password"
                         name="identifier"
                         placeholder=" "
                         {...register("password", {
